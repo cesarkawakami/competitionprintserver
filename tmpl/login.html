@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ITA Printserver</title>
+        <link rel="stylesheet" href="{{ static_url('bootstrap.css') }}">
+        <script src="{{ static_url('jquery.js') }}"></script>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="container fixed">
+                <h3>
+                    <a class="logo" href="/">Printserver do ITA</a>
+                </h3>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 60px;">
+            <div class="row">
+                <div class="span8 columns offset4">
+                    {% for error in errors %}
+                        <div class="alert-message error">
+                            <strong>
+                                {{ error }}
+                            </strong>
+                        </div>
+                    {% end %}
+                    <div class="page-header">
+                        <h2>Login</h2>
+                    </div>
+                    <form action="/login" method="post">
+                        <fieldset>
+                            <div class="field clearfix">
+                                <label for="teamname">
+                                    Nome do time
+                                </label>
+                                <div class="input">
+                                    <input class="large" id="teamname" name="teamname" type="text">
+                                </div>
+                            </div>                        
+                            <div class="actions">
+                                <button type="submit" class="btn primary">Login</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

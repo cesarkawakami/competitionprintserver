@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ITA Printserver</title>
+        <link rel="stylesheet" href="{{ static_url('bootstrap.css') }}">
+        <script src="{{ static_url('jquery.js') }}"></script>
+        <script src="{{ static_url('super.js') }}"></script>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="container fixed">
+                <h3>
+                    <a class="logo" href="/super">Printserver do ITA</a>
+                </h3>
+                <ul>
+                    <li><a>Interface Administrativa</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 60px;">
+            <div class="row">
+                <div class="page-header">
+                    <h2>OMG WTF Stop Submitting!!!</h2>
+                </div>
+                <table class="common-table zebra-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Equipe</th>
+                            <th>Timestamp</th>
+                            <th>Tags</th>
+                            <th>Linhas</th>
+                            <th colspan="2">Progresso</th>
+                            <th>Ver</th>
+                            <th>Sumir</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-data">
+                        <tr>
+                            <td colspan="9">carregando</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

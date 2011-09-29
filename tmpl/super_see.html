@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ code.user.teamname }} - Impressão ID {{ code.id }}</title>
+        <script src="{{ static_url('jquery.js') }}"></script>
+        <style>
+            pre { margin: 0; white-space: pre-wrap; }
+            body { margin: 0; font-family: monospace; font-size: 8pt; }
+            table { border: 0; width: 100%; border-collapse: collapse; }
+            table th, table td { border: 1px solid black; padding: 4px; margin: 0; }
+            div { margin-top: .5em; }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Código</th>
+                    <th>Equipe</th>
+                    <th>Tags</th>
+                    <th>Timestamp</th>
+                    <th>Linhas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ code.id }}</td>
+                    <td>{{ code.user.teamname }}</td>
+                    <td>{{ code.tags }}</td>
+                    <td>{{ code.timestamp }}</td>
+                    <td>{{ code.lines }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <pre>{{ code.code }}</pre>
+        </div>
+        <script>
+            $.get("/super/set/{{ code.id }}/printing");
+        </script>
+    </body>
+</html>

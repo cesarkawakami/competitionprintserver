@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ITA Printserver</title>
+        <link rel="stylesheet" href="{{ static_url('bootstrap.css') }}">
+        <script src="{{ static_url('jquery.js') }}"></script>
+        <script src="{{ static_url('app.js') }}"></script>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="container fixed">
+                <h3>
+                    <a class="logo" href="/">Printserver do ITA</a>
+                </h3>
+                <ul>
+                    <li><a>ID: {{ current_user.id }}</a></li>
+                    <li><a>Time: {{ current_user.teamname }}</a></li>
+                    <li><a>Username: {{ current_user.username }}</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 60px;">
+            <div class="row">
+                <div class="span6 columns">
+                    <div class="page-header">
+                        <h2>Submeter</h2>
+                    </div>
+                    <form action="/submit" id="submit-form" method="post" class="form-stacked">
+                        <fieldset>
+                            <div class="field clearfix">
+                                <label for="code">Código a imprimir</label>
+                                <div class="input">
+                                    <textarea class="xlarge" id="code" name="code" style="height: 250px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="field clearfix">
+                                <label for="code">Tags (opcional)</label>
+                                <div class="input">
+                                    <input class="xlarge" id="tags" name="tags" type="text">
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button id="submit-btn" type="submit" class="btn primary">Submeter</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="span10 columns">
+                    <div class="page-header">
+                        <h2>Histórico de submissões</h2>
+                    </div>
+                    <table class="common-table zebra-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Timestamp</th>
+                                <th>Tags</th>
+                                <th>Linhas</th>
+                                <th>Progresso</th>
+                                <th>Ver</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-data">
+                            <tr>
+                                <td colspan="5">carregando</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

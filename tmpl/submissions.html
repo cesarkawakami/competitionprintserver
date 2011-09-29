@@ -1,0 +1,10 @@
+{% for submission in submissions %}
+<tr>
+    <td>{{ submission.id }}</td>
+    <td>{{ submission.timestamp }}</td>
+    <td>{{ submission.tags }}</td>
+    <td>{{ submission.lines }}</td>
+    <td>{{ submission.status }}</td>
+    <td><a href="/see/{{ submission.id }}">ver</a></td>
+</tr>
+{% end %}

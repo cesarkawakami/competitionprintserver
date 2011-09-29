@@ -1,0 +1,17 @@
+{% for submission in submissions %}
+<tr>
+    <td>{{ submission.id }}</td>
+    <td>{{ submission.user.username }}</td>
+    <td>{{ submission.timestamp }}</td>
+    <td>{{ submission.tags }}</td>
+    <td>{{ submission.lines }}</td>
+    <td>
+        {{ submission.status }}
+    </td>
+    <td>
+        <a class="ajax" href="/super/set/{{submission.id}}/new">N</a>/<a class="ajax" href="/super/set/{{submission.id}}/printing">P</a>/<a class="ajax" href="/super/set/{{submission.id}}/delivered">D</a>
+    </td>
+    <td><a href="/super/see/{{ submission.id }}">ver</a></td>
+    <td><a class="ajax" href="/super/set/{{submission.id}}/delete">sumir</a></td>
+</tr>
+{% end %}
